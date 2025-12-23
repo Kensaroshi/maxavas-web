@@ -2,54 +2,47 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>MaxAvas</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-body {
-    margin: 0;
-    height: 100vh;
-    background: #0b0f1a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
-}
-
-.logo {
-    font-size: 52px;
-    font-weight: 600;
-    color: white;
-    animation: aura 2s ease-in-out forwards;
-}
-
-@keyframes aura {
-    0% {
-        opacity: 0;
-        transform: scale(0.9);
-        text-shadow: 0 0 0px #7dd3fc;
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.05);
-        text-shadow: 0 0 35px #7dd3fc;
-    }
-    100% {
-        opacity: 0;
-        transform: scale(1);
-        text-shadow: 0 0 0px #7dd3fc;
-    }
-}
-</style>
-
-<script>
-setTimeout(() => {
-    window.location.href = "home.html";
-}, 2300);
-</script>
+<title>MaxAvas | Home</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<script defer src="assets/js/app.js"></script>
 </head>
 
-<body>
+<body class="dark">
+
+<!-- Splash -->
+<div id="splash">
     <div class="logo">MaxAvas</div>
+</div>
+
+<!-- Navbar -->
+<header class="nav">
+    <div class="nav-left">Home</div>
+    <div class="nav-right">
+        <a href="login.html" class="nav-btn">Login</a>
+        <a href="login.html" class="nav-btn outline">Register</a>
+    </div>
+</header>
+
+<!-- Main -->
+<main class="container">
+    <section class="card large glow">
+        <h1>Digital Product</h1>
+        <p>Smooth, private and modern service.</p>
+    </section>
+
+    <section class="grid">
+        <div class="card">
+            <h2>Secure Platform</h2>
+            <p>Designed for personal usage.</p>
+        </div>
+
+        <div class="card">
+            <h2>iOS Inspired</h2>
+            <p>Soft UI, dark theme, aura effects.</p>
+        </div>
+    </section>
+</main>
+
 </body>
 </html>
