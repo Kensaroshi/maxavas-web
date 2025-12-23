@@ -1,14 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const splash = document.getElementById("splash");
 
+    // Splash (index only)
+    const splash = document.getElementById("splash");
     if (splash) {
         setTimeout(() => {
             splash.style.opacity = "0";
-            splash.style.pointerEvents = "none";
-
-            setTimeout(() => {
-                splash.remove();
-            }, 600);
+            setTimeout(() => splash.remove(), 600);
         }, 1200);
+    }
+
+    // Login logic
+    const loginForm = document.getElementById("loginForm");
+
+    if (loginForm) {
+        loginForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Simulate login success
+            window.location.assign("./index.html");
+        });
     }
 });
