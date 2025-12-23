@@ -17,12 +17,23 @@
 
 <!-- Navbar -->
 <header class="nav">
-    <div class="nav-left">Home</div>
-    <div class="nav-right">
+    <div class="nav-left">
+        <span id="homeBtn">Home</span>
+        <span id="profileBtn" class="hidden">Profile</span>
+    </div>
+
+    <div class="nav-right" id="navAuth">
         <a href="login.html" class="nav-btn">Login</a>
-        <a href="login.html" class="nav-btn outline">Register</a>
+        <a href="#" class="nav-btn">Register</a>
+    </div>
+
+    <div id="profileMenu" class="profile-menu hidden">
+        <a href="#balance">Balance</a>
+        <a href="#orders">Order History</a>
+        <a href="#" id="logoutBtn">Logout</a>
     </div>
 </header>
+
 
 <!-- Main -->
 <main class="container">
