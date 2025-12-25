@@ -1,59 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MaxAvas | Home</title>
-<link rel="stylesheet" href="assets/css/style.css">
-<script defer src="assets/js/app.js"></script>
+  <meta charset="UTF-8" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
 </head>
+<body>
 
-<body class="dark">
+  <nav>
+    <span>PRIVATE SYSTEM</span>
+    <button onclick="logout()">Logout</button>
+  </nav>
 
-<!-- Splash -->
-<div id="splash">
-    <div class="logo">MaxAvas</div>
-</div>
+  <main>
+    <h2>Welcome</h2>
+    <p>This website is always online but not public.</p>
+  </main>
 
-<!-- Navbar -->
-<header class="nav">
-    <div class="nav-left">
-        <span id="homeBtn">Home</span>
-        <span id="profileBtn" class="hidden">Profile</span>
-    </div>
-
-    <div class="nav-right" id="navAuth">
-        <a href="login.html" class="nav-btn">Login</a>
-        <a href="#" class="nav-btn">Register</a>
-    </div>
-
-    <div id="profileMenu" class="profile-menu hidden">
-        <a href="#balance">Balance</a>
-        <a href="#orders">Order History</a>
-        <a href="#" id="logoutBtn">Logout</a>
-    </div>
-</header>
-
-
-<!-- Main -->
-<main class="container">
-    <section class="card large glow">
-        <h1>Digital Product</h1>
-        <p>Smooth, private and modern service.</p>
-    </section>
-
-    <section class="grid">
-        <div class="card">
-            <h2>Secure Platform</h2>
-            <p>Designed for personal usage.</p>
-        </div>
-
-        <div class="card">
-            <h2>iOS Inspired</h2>
-            <p>Soft UI, dark theme, aura effects.</p>
-        </div>
-    </section>
-</main>
-
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
