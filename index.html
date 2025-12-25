@@ -2,21 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Dashboard</title>
+  <title>MaxAvas | Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/theme.css">
 </head>
 <body>
 
-  <nav>
-    <span>PRIVATE SYSTEM</span>
-    <button onclick="logout()">Logout</button>
-  </nav>
+  <header class="topbar">
+    <div class="brand">MaxAvas</div>
+    <button class="ghost" id="logoutBtn">Logout</button>
+  </header>
 
-  <main>
-    <h2>Welcome</h2>
-    <p>This website is always online but not public.</p>
+  <main class="dashboard">
+    <section class="panel fade-up">
+      <h1>Dashboard</h1>
+      <p class="muted">
+        This system is private, persistent, and always online.
+      </p>
+    </section>
   </main>
 
   <script src="assets/js/app.js"></script>
