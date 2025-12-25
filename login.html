@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Login | MaxAvas</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script defer src="assets/js/app.js"></script>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
 </head>
 <body class="center">
 
-<div class="login-card">
-    <h2>Login</h2>
+  <div class="login-card">
+    <h1>Secure Login</h1>
 
-    <form id="loginForm" action="javascript:void(0);">
-    <input id="username" type="text" placeholder="Username" required>
-    <input id="password" type="password" placeholder="Password" required>
-    <button type="submit">Sign In</button>
-</form>
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
 
+    <button onclick="login()">Login</button>
 
+    <p class="hint">This page is private</p>
+  </div>
 
-    <p class="hint">Contact admin via Telegram to register</p>
-</div>
-
+  <script src="assets/js/auth.js"></script>
 </body>
 </html>
