@@ -1,10 +1,29 @@
-nav {
+.topbar {
   display: flex;
   justify-content: space-between;
-  padding: 16px 24px;
-  background: #16161d;
+  align-items: center;
+  padding: 20px 32px;
+  background: rgba(17,24,39,.75);
+  backdrop-filter: blur(16px);
 }
 
-main {
-  padding: 40px;
+.brand {
+  font-weight: 600;
+  letter-spacing: .4px;
+}
+
+.dashboard {
+  padding: 120px 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.panel {
+  max-width: 680px;
+  padding: 48px;
+  border-radius: 22px;
+  background: var(--panel);
+  box-shadow:
+    0 60px 120px rgba(0,0,0,.6),
+    inset 0 1px rgba(255,255,255,.05);
 }
