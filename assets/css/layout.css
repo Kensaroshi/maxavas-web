@@ -1,29 +1,49 @@
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 32px;
-  background: rgba(17,24,39,.75);
-  backdrop-filter: blur(16px);
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
-.brand {
-  font-weight: 600;
-  letter-spacing: .4px;
+.login-card {
+    width: 340px;
+    padding: 32px;
+    background: #020617;
+    border: 1px solid #1f2933;
+    border-radius: 10px;
+    text-align: left;
 }
 
-.dashboard {
-  padding: 120px 40px;
-  display: flex;
-  justify-content: center;
+.login-card h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 500;
 }
 
-.panel {
-  max-width: 680px;
-  padding: 48px;
-  border-radius: 22px;
-  background: var(--panel);
-  box-shadow:
-    0 60px 120px rgba(0,0,0,.6),
-    inset 0 1px rgba(255,255,255,.05);
+.login-card input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 14px;
+    background: #020617;
+    border: 1px solid #1f2933;
+    color: #e5e7eb;
+}
+
+.login-card button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 28px;
+    border-bottom: 1px solid #1f2933;
+}
+
+.content {
+    padding: 40px;
 }
