@@ -1,38 +1,17 @@
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+/* Minimal system theme */
+
+button {
+    background: #e5e7eb;
+    color: #020617;
+    font-weight: 500;
 }
 
-.login-card {
-  width: 320px;
-  padding: 30px;
-  background: #16161d;
-  border-radius: 14px;
-  box-shadow: 0 0 40px rgba(0,0,0,.6);
+button:hover {
+    background: #d1d5db;
 }
 
-.login-card h1 {
-  margin-bottom: 20px;
-}
-
-.login-card input {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 12px;
-  background: #0e0e11;
-  border: 1px solid #2a2a35;
-  color: white;
-  border-radius: 8px;
-}
-
-.login-card button {
-  width: 100%;
-  padding: 12px;
-  background: linear-gradient(135deg,#4f46e5,#9333ea);
-  border: none;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
+#error {
+    margin-top: 12px;
+    color: #dc2626;
+    font-size: 13px;
 }
