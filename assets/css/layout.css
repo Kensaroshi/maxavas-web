@@ -1,69 +1,61 @@
-.viewport{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.topbar {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
 }
-.auth-card{
-  width:360px;
-  padding:28px;
-  border-radius:16px;
-  background:var(--surface);
-  border:1px solid var(--border);
+
+.window-controls {
+  display: flex;
+  gap: 6px;
 }
-input{
-  width:100%;
-  padding:12px;
-  margin:10px 0;
-  border-radius:10px;
-  border:1px solid var(--border);
-  background:transparent;
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
 }
-.topbar{
-  height:52px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:0 28px;
-  border-bottom:1px solid var(--border);
+
+.red { background:#ff5f56 }
+.yellow { background:#ffbd2e }
+.green { background:#27c93f }
+
+.title {
+  margin-left: 16px;
+  font-weight: 600;
+  flex: 1;
 }
-.app{
-  display:flex;
-  height:calc(100vh - 52px);
+
+.app {
+  display: flex;
+  height: calc(100vh - 52px);
 }
-.sidebar{
-  width:200px;
-  padding:16px;
-  border-right:1px solid var(--border);
+
+.sidebar {
+  width: 220px;
+  padding: 16px;
+  border-right: 1px solid #e5e7eb;
+  background: #fafafa;
 }
-.view{
-  flex:1;
-  padding:32px;
+
+.sidebar button {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 6px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
 }
-.panel{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:22px;
-  animation:fade .12s ease-out;
+
+.sidebar button.active,
+.sidebar button:hover {
+  background: #e5e7eb;
 }
-.hidden{display:none}
-.amount{
-  font-size:34px;
-  font-weight:600;
-}
-.activity{
-  list-style:none;
-  padding:0;
-}
-.activity li{
-  display:grid;
-  grid-template-columns:1fr auto auto;
-  gap:12px;
-  padding:10px 0;
-  border-bottom:1px solid var(--border);
-}
-@keyframes fade{
-  from{opacity:0;transform:translateY(2px)}
-  to{opacity:1}
+
+.view {
+  flex: 1;
+  padding: 32px;
 }
