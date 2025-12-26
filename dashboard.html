@@ -10,24 +10,29 @@
 </head>
 <body>
 
-<nav class="top-nav">
-  <span>Internal Simulation</span>
-  <button onclick="logout()">Logout</button>
+<nav class="top">
+  <span class="brand">Internal Simulation</span>
+  <button class="ghost" onclick="logout()">Logout</button>
 </nav>
 
-<div class="content">
-  <h2>Balance Snapshot</h2>
-  <p class="big-number">$12,845,230.00</p>
+<main class="wrap">
+  <section class="panel soft">
+    <h2>Balance</h2>
+    <div class="amount">$4,980.00</div>
+    <p class="muted">Snapshot · USD</p>
+  </section>
 
-  <h3>Recent Activity</h3>
-  <ul class="list">
-    <li>Settlement +$2,100,000</li>
-    <li>Adjustment −$350,000</li>
-    <li>Ledger sync +$480,000</li>
-  </ul>
+  <section class="panel soft">
+    <h3>Recent Activity</h3>
+    <ul class="list">
+      <li><span>Ledger sync</span><span>+$1,200</span></li>
+      <li><span>Adjustment</span><span>−$320</span></li>
+      <li><span>Settlement</span><span>+$640</span></li>
+    </ul>
+  </section>
 
-  <p class="note">This interface is a private simulation for UI demonstration.</p>
-</div>
+  <p class="footnote">Private UI simulation. No real transactions.</p>
+</main>
 
 <script src="assets/js/app.js"></script>
 </body>
