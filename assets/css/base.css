@@ -1,20 +1,10 @@
 * {
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
 }
 
 body {
   margin: 0;
-  background: var(--bg-system);
-  color: var(--text-primary);
-  transition: background .4s var(--ease-ios), color .4s var(--ease-ios);
-}
-
-.hidden { display: none; }
-
-/* iOS motion tokens */
-:root {
-  --ease-ios: cubic-bezier(.25,.8,.25,1);
-  --ease-in: cubic-bezier(.4,0,1,1);
-  --ease-out: cubic-bezier(0,0,.2,1);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  background: #e5e7eb;
+  color: #0f172a;
 }
