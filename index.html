@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>NenoBL Private</title>
+<title>NenoBL – Internal System</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="assets/img/N.png">
+
+<link rel="icon" href="assets/img/N.png" type="image/png">
 
 <link rel="stylesheet" href="assets/css/base.css">
 <link rel="stylesheet" href="assets/css/layout.css">
@@ -13,41 +14,10 @@
 
 <body>
 
-<!-- FACE ID LOCK SCREEN -->
-<div class="lock-screen" id="lock">
-  <div class="lock-card glass">
-    <img src="assets/img/N.png" class="lock-logo" alt="Logo">
+<div class="desktop">
+  <div class="app-shell">
 
-    <div class="faceid">
-      <svg viewBox="0 0 200 200" class="face-mesh">
-        <!-- static mesh points -->
-        <g class="mesh-points">
-          <circle cx="100" cy="40" r="3"/>
-          <circle cx="70" cy="55" r="2.5"/>
-          <circle cx="130" cy="55" r="2.5"/>
-          <circle cx="55" cy="85" r="2"/>
-          <circle cx="145" cy="85" r="2"/>
-          <circle cx="100" cy="95" r="3"/>
-          <circle cx="80" cy="120" r="2"/>
-          <circle cx="120" cy="120" r="2"/>
-          <circle cx="100" cy="150" r="3"/>
-        </g>
-
-        <!-- scanning frame -->
-        <rect x="30" y="30" width="140" height="140" rx="18" class="scan-frame"/>
-        <line x1="30" y1="40" x2="170" y2="40" class="scan-line"/>
-      </svg>
-    </div>
-
-    <p class="lock-text">Scanning Face ID…</p>
-    <p class="lock-sub">Secure private session</p>
-  </div>
-</div>
-
-<!-- APP -->
-<div class="desktop hidden" id="app">
-  <div class="app-shell glass-depth">
-
+    <!-- Top Bar -->
     <header class="topbar">
       <div class="window-controls">
         <span class="dot red"></span>
@@ -56,58 +26,55 @@
       </div>
 
       <div class="title">
-        <img src="assets/img/N.png" class="app-logo" alt="Logo">
-        NENO ONL Banking.
+        <img src="assets/img/N.png" alt="logo">
+        Internal Financial Console
       </div>
 
-      <button class="ghost" onclick="toggleTheme()" aria-label="Toggle theme">◐</button>
+      <div class="status">
+        Secure · Active
+      </div>
     </header>
 
+    <!-- App -->
     <div class="app">
+
+      <!-- Sidebar -->
       <aside class="sidebar">
-        <button class="active" onclick="show('overview')">Overview</button>
-        <button onclick="show('rates')">Currencies</button>
-        <button onclick="show('transfer')">Transfer</button>
-        <button onclick="lock()">Lock</button>
+        <button class="active">Overview</button>
+        <button disabled>Activity</button>
+        <button disabled>Assets</button>
       </aside>
 
+      <!-- Main View -->
       <main class="view">
-        <section id="overview" class="panel fade">
-          <span class="label">Total Assets</span>
+
+        <!-- Balance Card -->
+        <section class="card balance-card">
+          <span class="label">Total Balance</span>
           <div class="amount">$4,982.32</div>
-          <span class="sub">Primary USD Account · Private Tier</span>
+          <span class="currency">USD</span>
         </section>
 
-        <section id="rates" class="panel hidden fade">
-          <div class="rates">
-            <div><span>USD</span><strong>$4,982.32</strong></div>
-            <div><span>THB</span><strong>฿179,363</strong></div>
-            <div><span>EUR</span><strong>€4,612</strong></div>
-            <div><span>JPY</span><strong>¥736,421</strong></div>
+        <!-- FX Card -->
+        <section class="card fx-card">
+          <div class="fx-row">
+            <span>USD</span><span>$4,982.32</span>
+          </div>
+          <div class="fx-row">
+            <span>THB</span><span>฿179,640</span>
+          </div>
+          <div class="fx-row">
+            <span>EUR</span><span>€4,580</span>
+          </div>
+          <div class="fx-row">
+            <span>JPY</span><span>¥733,000</span>
           </div>
         </section>
 
-        <section id="transfer" class="panel hidden fade">
-          <span class="label">Internal Transfer</span>
+        <footer class="footnote">
+          Internal use only · System snapshot
+        </footer>
 
-          <div class="transfer-card glass">
-            <div class="field">
-              <label>Recipient</label>
-              <input value="Private Internal Account" disabled>
-            </div>
-
-            <div class="field">
-              <label>Amount (USD)</label>
-              <input value="840.75" disabled>
-            </div>
-
-            <button class="primary" onclick="confirmTransfer()">
-              Confirm Transfer
-            </button>
-          </div>
-        </section>
-
-        <p class="footnote">Developed by the Monezo EMC Co., Ltd. Dev Team.</p>
       </main>
     </div>
   </div>
