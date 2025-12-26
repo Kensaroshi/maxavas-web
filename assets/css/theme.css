@@ -1,22 +1,66 @@
-button{
-  width:100%;
-  padding:10px;
-  margin-bottom:6px;
-  border-radius:10px;
-  border:1px solid var(--border);
-  background:transparent;
-  cursor:pointer;
+.panel {
+  max-width: 720px;
 }
-.primary{
-  background:var(--text);
-  color:var(--bg);
-  border:none;
+
+.label {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: #6b7280;
 }
-.ghost{width:auto}
-.muted{color:var(--muted);font-size:13px}
-.footnote{
-  margin-top:20px;
-  font-size:11px;
-  color:var(--muted);
+
+.amount {
+  font-size: 56px;
+  font-weight: 600;
+  margin: 8px 0 16px;
 }
-#error{color:#ff3b30;font-size:12px}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.card {
+  padding: 16px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+
+.activity {
+  list-style: none;
+  padding: 0;
+  margin-top: 12px;
+}
+
+.activity li {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.primary {
+  margin-top: 12px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+}
+
+.ghost {
+  background: none;
+  border: none;
+  color: #555;
+  cursor: pointer;
+}
+
+.footnote {
+  margin-top: 40px;
+  font-size: 12px;
+  color: #9ca3af;
+}
