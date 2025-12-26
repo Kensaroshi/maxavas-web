@@ -11,8 +11,8 @@
 <body>
 
 <header class="topbar">
-  <span>Simulation Console</span>
-  <button class="ghost" onclick="logout()">Log out</button>
+  <span style="font-weight:600;">NenoBL Console</span>
+  <button class="ghost" onclick="logout()">Sign out</button>
 </header>
 
 <div class="app">
@@ -23,25 +23,55 @@
   </aside>
 
   <main class="view">
+
+    <!-- OVERVIEW -->
     <section id="overview" class="panel">
-      <span class="label">Current balance</span>
+      <span class="label muted">Available balance</span>
       <div class="amount">$4982</div>
+
+      <div style="margin-top:14px; font-size:13px;" class="muted">
+        Last updated · just now
+      </div>
     </section>
 
+    <!-- ACTIVITY -->
     <section id="activity" class="panel hidden">
-      <ul class="activity">
-        <li><span>Recent incoming transaction</span><span>+640</span><span>2 min ago</span></li>
-        <li><span>Latest transaction: Withdrawal</span><span>-120</span><span>12 min ago</span></li>
-        <li><span>Daily Gain</span><span>+310</span><span>1 hr ago</span></li>
+      <span class="label muted">Recent activity</span>
+
+      <ul class="activity" style="margin-top:12px;">
+        <li>
+          <span>Incoming settlement</span>
+          <span>+640</span>
+          <span class="muted">2 min ago</span>
+        </li>
+        <li>
+          <span>Manual withdrawal</span>
+          <span>-120</span>
+          <span class="muted">12 min ago</span>
+        </li>
+        <li>
+          <span>Daily performance</span>
+          <span>+310</span>
+          <span class="muted">1 hr ago</span>
+        </li>
       </ul>
     </section>
 
+    <!-- PROFILE -->
     <section id="profile" class="panel hidden">
-      <p>Status: Active</p>
-      <p>Session: Online</p>
+      <span class="label muted">System status</span>
+
+      <div style="margin-top:12px; line-height:1.8;">
+        <p><strong>Account</strong> · Active</p>
+        <p><strong>Session</strong> · Online</p>
+        <p><strong>Access level</strong> · Internal</p>
+      </div>
     </section>
 
-    <p class="footnote">Developed by the Monezo EMC Co., Ltd. Dev Team.</p>
+    <p class="footnote">
+      © 2025 Monezo EMC Co., Ltd. · Internal simulation environment
+    </p>
+
   </main>
 </div>
 
