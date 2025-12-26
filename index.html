@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>MaxAvas | Dashboard</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/theme.css">
+<meta charset="UTF-8">
+<title>Access</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/theme.css">
 </head>
 <body>
 
-  <header class="topbar">
-    <div class="brand">MaxAvas</div>
-    <button class="ghost" id="logoutBtn">Logout</button>
-  </header>
+<div class="center">
+  <div class="login-card">
+    <h2>System Access</h2>
 
-  <main class="dashboard">
-    <section class="panel fade-up">
-      <h1>Dashboard</h1>
-      <p class="muted">
-        This system is private, persistent, and always online.
-      </p>
-    </section>
-  </main>
+    <input id="user" type="text" placeholder="Username">
+    <input id="pass" type="password" placeholder="Password">
 
-  <script src="assets/js/app.js"></script>
+    <button onclick="login()">Sign in</button>
+    <div id="error"></div>
+  </div>
+</div>
+
+<script src="assets/js/app.js"></script>
 </body>
 </html>
