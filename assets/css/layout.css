@@ -1,55 +1,82 @@
-.center {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.center{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
-.login-card {
-  width: 340px;
-  padding: 32px;
-  border: 1px solid #1f2933;
-  border-radius: 10px;
-  background: #020617;
+.wrap{
+  max-width:860px;
+  padding:32px;
+  margin:0 auto;
 }
 
-.login-card h2 {
-  margin: 0 0 18px;
-  font-weight: 500;
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 28px;
+  border-bottom:1px solid var(--border);
 }
 
-.login-card input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 12px;
-  background: #020617;
-  border: 1px solid #1f2933;
-  color: #e5e7eb;
+.brand{ font-weight:500; }
+
+.card{
+  width:360px;
+  padding:28px;
 }
 
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 18px 28px;
-  border-bottom: 1px solid #1f2933;
+.panel{
+  padding:24px;
+  margin-bottom:18px;
 }
 
-.content {
-  padding: 40px;
-  max-width: 720px;
+.soft{
+  background: var(--surface);
+  border-radius:14px;
+  border:1px solid var(--border);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.04) inset,
+    0 -1px 0 rgba(0,0,0,.6) inset;
 }
 
-.big-number {
-  font-size: 32px;
-  margin: 12px 0 28px;
+h1,h2,h3{ margin:0 0 8px; font-weight:500; }
+
+.muted{ color:var(--muted); font-size:13px; }
+
+input{
+  width:100%;
+  padding:11px 12px;
+  margin:12px 0;
+  background:#0b0b0c;
+  color:var(--text);
+  border-radius:10px;
+  border:1px solid var(--border);
 }
 
-.list {
-  padding-left: 18px;
+.amount{
+  font-size:34px;
+  font-weight:600;
+  margin:6px 0 2px;
 }
 
-.note {
-  margin-top: 32px;
-  font-size: 12px;
-  opacity: 0.5;
+.list{
+  list-style:none;
+  padding:0;
+  margin:8px 0 0;
+}
+
+.list li{
+  display:flex;
+  justify-content:space-between;
+  padding:10px 0;
+  border-bottom:1px solid var(--border);
+}
+
+.list li:last-child{ border-bottom:none; }
+
+.footnote{
+  margin-top:22px;
+  font-size:12px;
+  color:var(--muted);
 }
