@@ -1,143 +1,110 @@
-:root {
-  --bg-system:#e5e7eb;
-  --bg-glass:rgba(255,255,255,.78);
-  --border:rgba(0,0,0,.08);
-  --text-primary:#111;
-  --text-secondary:#6b7280;
-}
-
-html[data-theme="dark"] {
-  --bg-system:#0b0d12;
-  --bg-glass:rgba(18,20,28,.65);
-  --border:rgba(255,255,255,.08);
-  --text-primary:#f5f5f7;
-  --text-secondary:#9ca3af;
-}
-
-.glass,
-.glass-depth {
-  background: var(--bg-glass);
-  backdrop-filter: blur(24px) saturate(150%);
-  border: 1px solid var(--border);
-}
-
-.glass-depth {
-  box-shadow:
-    0 40px 120px rgba(0,0,0,.35),
-    inset 0 1px rgba(255,255,255,.25);
-}
-
-.panel {
-  border-radius: 20px;
-  padding: 28px;
-}
-
-.label { font-size: 13px; color: var(--text-secondary); }
-.amount { font-size: 44px; font-weight: 600; margin: 6px 0; }
-.sub { font-size: 12px; color: var(--text-secondary); }
-
-.rates div {
-  display:flex;
-  justify-content:space-between;
-  padding:12px 0;
-  border-bottom:1px solid var(--border);
-}
-
-.transfer-card {
-  margin-top: 20px;
-  padding: 24px;
-  border-radius: 18px;
-}
-
-/* Lock + Face ID */
-.lock-screen {
-  position: fixed;
-  inset: 0;
-  background: var(--bg-system);
+.topbar {
+  height: 52px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  z-index: 20;
+  padding: 0 18px;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+  background: rgba(255,255,255,.7);
 }
 
-.lock-card {
-  padding: 44px;
-  border-radius: 26px;
-  text-align: center;
+.window-controls {
+  display: flex;
+  gap: 6px;
 }
 
-.lock-logo { width: 64px; margin-bottom: 18px; }
-
-.lock-text {
-  font-size: 15px;
-  margin-top: 16px;
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
 }
 
-.lock-sub {
-  font-size: 12px;
-  color: var(--text-secondary);
+.red { background:#ff5f56 }
+.yellow { background:#ffbd2e }
+.green { background:#27c93f }
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 16px;
+  font-weight: 600;
+  flex: 1;
 }
 
-/* Face ID mesh */
-.faceid {
-  width: 160px;
-  height: 160px;
-  margin: 0 auto;
+.title img {
+  width: 18px;
+  height: 18px;
 }
 
-.face-mesh {
+.status {
+  font-size: 13px;
+  opacity: .6;
+}
+
+.sidebar {
+  width: 220px;
+  padding: 16px;
+  border-right: 1px solid rgba(0,0,0,.06);
+  background: rgba(250,250,250,.6);
+}
+
+.sidebar button {
   width: 100%;
-  height: 100%;
-}
-
-.mesh-points circle {
-  fill: currentColor;
-  opacity: .55;
-  animation: meshPulse 2.4s infinite var(--ease-ios);
-}
-
-.scan-frame {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  opacity: .35;
-}
-
-.scan-line {
-  stroke: currentColor;
-  stroke-width: 2;
-  animation: scan 2.2s infinite var(--ease-ios);
-}
-
-@keyframes scan {
-  0% { transform: translateY(0); opacity:0 }
-  20% { opacity:1 }
-  80% { opacity:1 }
-  100% { transform: translateY(120px); opacity:0 }
-}
-
-@keyframes meshPulse {
-  0% { opacity:.3 }
-  50% { opacity:.8 }
-  100% { opacity:.3 }
-}
-
-/* Buttons */
-.primary {
-  margin-top: 12px;
-  padding: 12px;
-  border-radius: 14px;
+  padding: 10px 14px;
+  border-radius: 10px;
   border: none;
-  background: #000;
-  color: #fff;
-  cursor: pointer;
+  background: transparent;
+  text-align: left;
+  margin-bottom: 6px;
+  font-size: 14px;
+  cursor: default;
 }
 
-.fade {
-  animation: fade .45s var(--ease-ios);
+.sidebar button.active {
+  background: rgba(0,0,0,.08);
 }
 
-@keyframes fade {
-  from { opacity:0; transform:translateY(8px); }
-  to { opacity:1; transform:none; }
+.view {
+  flex: 1;
+  padding: 36px;
+}
+
+.card {
+  background: rgba(255,255,255,.75);
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 24px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.8),
+    0 12px 30px rgba(0,0,0,.08);
+}
+
+.balance-card .label {
+  font-size: 13px;
+  opacity: .6;
+}
+
+.amount {
+  font-size: 42px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.currency {
+  font-size: 13px;
+  opacity: .5;
+}
+
+.fx-card .fx-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 15px;
+}
+
+.footnote {
+  font-size: 12px;
+  opacity: .4;
+  margin-top: 40px;
 }
