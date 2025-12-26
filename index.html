@@ -26,15 +26,60 @@
     </header>
 
     <div class="app">
+
       <aside class="sidebar">
-        <button class="active" onclick="show('overview')">Overview</button>
-        <button onclick="show('activity')">Activity</button>
-        <button onclick="show('profile')">Profile</button>
-        <button onclick="show('statement')">Statement</button>
+        <button class="active" onclick="show('overview', this)">Overview</button>
+        <button onclick="show('activity', this)">Activity</button>
+        <button onclick="show('profile', this)">Profile</button>
+        <button onclick="show('statement', this)">Statement</button>
       </aside>
 
       <main class="view">
-        <!-- panels เหมือนเดิม -->
+
+        <section id="overview" class="panel">
+          <span class="label">Available balance</span>
+          <div class="amount mono">$4982</div>
+
+          <div class="grid">
+            <div class="card">
+              <span class="meta">Today</span>
+              <strong class="mono">+310</strong>
+            </div>
+            <div class="card">
+              <span class="meta">Total volume</span>
+              <strong class="mono">15284</strong>
+            </div>
+          </div>
+
+          <p class="muted small">Last sync · just now</p>
+        </section>
+
+        <section id="activity" class="panel hidden">
+          <span class="label">Recent activity</span>
+          <ul class="activity">
+            <li><span>Incoming settlement</span><span class="mono">+640</span><span>2 min ago</span></li>
+            <li><span>Manual withdrawal</span><span class="mono">-120</span><span>12 min ago</span></li>
+            <li><span>Daily performance</span><span class="mono">+310</span><span>1 hr ago</span></li>
+          </ul>
+        </section>
+
+        <section id="profile" class="panel hidden">
+          <span class="label">System status</span>
+          <p><strong>Account</strong> · Active</p>
+          <p><strong>Session</strong> · Online</p>
+          <p><strong>Access</strong> · Internal</p>
+        </section>
+
+        <section id="statement" class="panel hidden">
+          <span class="label">Account statement</span>
+          <p class="muted">Internal monthly summary</p>
+          <button class="primary" onclick="exportPDF()">Export PDF</button>
+        </section>
+
+        <footer class="footnote">
+          © 2025 Monezo EMC Co., Ltd. · Internal use only
+        </footer>
+
       </main>
     </div>
 
@@ -43,5 +88,4 @@
 
 <script src="assets/js/app.js"></script>
 </body>
-
 </html>
