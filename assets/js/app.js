@@ -1,9 +1,9 @@
-function show(id) {
+function show(id, el) {
   document.querySelectorAll('.panel').forEach(p => p.classList.add('hidden'));
   document.getElementById(id).classList.remove('hidden');
 
   document.querySelectorAll('.sidebar button').forEach(b => b.classList.remove('active'));
-  event.target.classList.add('active');
+  el.classList.add('active');
 }
 
 function logout() {
