@@ -2,25 +2,88 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Access</title>
+<title>NenoBL Console</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" href="assets/css/base.css">
 <link rel="stylesheet" href="assets/css/layout.css">
 <link rel="stylesheet" href="assets/css/theme.css">
 </head>
+
 <body>
 
-<div class="viewport">
-  <div class="auth-card">
-    <h1>Sign in</h1>
-    <p class="muted">Internal simulation system</p>
-
-    <input id="user" placeholder="Username">
-    <input id="pass" type="password" placeholder="Password">
-
-    <button class="primary" onclick="login()">Continue</button>
-    <div id="error"></div>
+<!-- macOS Window Chrome -->
+<header class="topbar">
+  <div class="window-controls">
+    <span class="dot red"></span>
+    <span class="dot yellow"></span>
+    <span class="dot green"></span>
   </div>
+  <span class="title">NenoBL — Internal Simulation</span>
+  <button class="ghost" onclick="logout()">Sign out</button>
+</header>
+
+<div class="app">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <button class="active" onclick="show('overview')">Overview</button>
+    <button onclick="show('activity')">Activity</button>
+    <button onclick="show('profile')">Profile</button>
+    <button onclick="show('statement')">Statement</button>
+  </aside>
+
+  <!-- Main -->
+  <main class="view">
+
+    <!-- OVERVIEW -->
+    <section id="overview" class="panel">
+      <span class="label">Available balance</span>
+      <div class="amount mono">$4982</div>
+
+      <div class="grid">
+        <div class="card">
+          <span class="meta">Today</span>
+          <strong class="mono">+310</strong>
+        </div>
+        <div class="card">
+          <span class="meta">Total volume</span>
+          <strong class="mono">15284</strong>
+        </div>
+      </div>
+
+      <p class="muted small">Last sync · just now</p>
+    </section>
+
+    <!-- ACTIVITY -->
+    <section id="activity" class="panel hidden">
+      <span class="label">Recent activity</span>
+      <ul class="activity">
+        <li><span>Incoming settlement</span><span class="mono">+640</span><span>2 min ago</span></li>
+        <li><span>Manual withdrawal</span><span class="mono">-120</span><span>12 min ago</span></li>
+        <li><span>Daily performance</span><span class="mono">+310</span><span>1 hr ago</span></li>
+      </ul>
+    </section>
+
+    <!-- PROFILE -->
+    <section id="profile" class="panel hidden">
+      <span class="label">System status</span>
+      <p><strong>Account</strong> · Active</p>
+      <p><strong>Session</strong> · Online</p>
+      <p><strong>Access</strong> · Internal</p>
+    </section>
+
+    <!-- STATEMENT (Export PDF fake) -->
+    <section id="statement" class="panel hidden">
+      <span class="label">Account statement</span>
+      <p class="muted">Monthly internal summary</p>
+      <button class="primary" onclick="exportPDF()">Export PDF</button>
+    </section>
+
+    <footer class="footnote">
+      © 2025 Monezo EMC Co., Ltd. · Internal use only
+    </footer>
+
+  </main>
 </div>
 
 <script src="assets/js/app.js"></script>
