@@ -1,51 +1,14 @@
-/* Navigation */
-function show(id) {
-  document.querySelectorAll('.panel').forEach(p => p.classList.add('hidden'));
-  const panel = document.getElementById(id);
-  panel.classList.remove('hidden');
+// Internal system: no auth, no login, no mutation
+// Purpose: display-only financial snapshot
 
-  document.querySelectorAll('.sidebar button')
-    .forEach(b => b.classList.remove('active'));
-
-  event.target.classList.add('active');
-}
-
-/* Theme */
-function toggleTheme() {
-  const html = document.documentElement;
-  html.dataset.theme = html.dataset.theme === "dark" ? "light" : "dark";
-}
-
-/* Fake Face ID session */
-let faceIdTimer = null;
-
-function unlock() {
-  document.getElementById("lock").classList.add("hidden");
-  document.getElementById("app").classList.remove("hidden");
-}
-
-function lock() {
-  document.getElementById("lock").classList.remove("hidden");
-  document.getElementById("app").classList.add("hidden");
-  startFaceIdScan();
-}
-
-function startFaceIdScan() {
-  clearTimeout(faceIdTimer);
-  faceIdTimer = setTimeout(() => {
-    unlock();
-  }, 2200);
-}
-
-/* Init */
-startFaceIdScan();
-
-/* Fake transfer confirmation */
-function confirmTransfer() {
-  const ref = "PRV-" + Math.floor(100000 + Math.random() * 900000);
-  alert(
-    "Transfer completed successfully.\n" +
-    "Reference: " + ref + "\n" +
-    "Status: Settled"
-  );
-}
+document.body.animate(
+  [
+    { opacity: 0, transform: "scale(0.98)" },
+    { opacity: 1, transform: "scale(1)" }
+  ],
+  {
+    duration: 420,
+    easing: "cubic-bezier(0.22,1,0.36,1)",
+    fill: "forwards"
+  }
+);
