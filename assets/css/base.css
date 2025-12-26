@@ -5,6 +5,7 @@
 
 body {
   margin: 0;
-  background: #e5e7eb;
-  color: #111;
+  background: var(--bg-system);
+  color: var(--text-primary);
+  transition: background .4s, color .4s;
 }
