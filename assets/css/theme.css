@@ -1,17 +1,17 @@
-/* Minimal system theme */
-
 button {
-    background: #e5e7eb;
-    color: #020617;
-    font-weight: 500;
+  padding: 10px 14px;
+  background: #e5e7eb;
+  color: #020617;
+  border: none;
+  cursor: pointer;
 }
 
 button:hover {
-    background: #d1d5db;
+  background: #d1d5db;
 }
 
 #error {
-    margin-top: 12px;
-    color: #dc2626;
-    font-size: 13px;
+  color: #dc2626;
+  font-size: 13px;
+  margin-top: 8px;
 }
