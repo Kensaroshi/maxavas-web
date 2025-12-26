@@ -1,3 +1,25 @@
+.desktop {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background: #e5e7eb;
+}
+
+.app-shell {
+  width: 1180px;
+  height: 760px;
+  display: flex;
+  flex-direction: column;
+  background: #f9fafb;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow:
+    0 40px 120px rgba(0,0,0,.25),
+    0 8px 24px rgba(0,0,0,.12);
+}
+
 .topbar {
   display: flex;
   align-items: center;
@@ -29,7 +51,7 @@
 
 .app {
   display: flex;
-  height: calc(100vh - 52px);
+  flex: 1;
 }
 
 .sidebar {
@@ -58,4 +80,5 @@
 .view {
   flex: 1;
   padding: 32px;
+  overflow-y: auto;
 }
