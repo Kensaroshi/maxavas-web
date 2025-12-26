@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <title>NenoBL</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- favicon -->
-<link rel="icon" type="image/png" href="assets/img/N.png">
+<link rel="icon" href="assets/img/N.png">
 
 <link rel="stylesheet" href="assets/css/base.css">
 <link rel="stylesheet" href="assets/css/layout.css">
 <link rel="stylesheet" href="assets/css/theme.css">
 </head>
-<body>
 
+<body>
 <div class="desktop">
   <div class="app-shell">
 
@@ -25,11 +23,11 @@
       </div>
 
       <div class="title">
-        <img src="assets/img/N.png" class="app-logo" alt="logo">
-        NENO ONL BANK.
+        <img src="assets/img/N.png" class="app-logo">
+       NENO ONL BANK.
       </div>
 
-      <button class="ghost" onclick="logout()">Log out</button>
+      <button class="ghost" onclick="toggleTheme()">◐</button>
     </header>
 
     <div class="app">
@@ -41,22 +39,19 @@
 
       <main class="view">
 
-        <section id="overview" class="panel">
-          <span class="label">Current balance</span>
-          <div class="amount">$4982.32</div>
+        <section id="overview" class="panel fade">
+          <span class="label">Total Assets</span>
+          <div class="amount" id="balance">$4982.32</div>
+          <span class="sub">Simulated USD account</span>
         </section>
 
-        <section id="activity" class="panel hidden">
-          <ul class="activity">
-            <li><span>Incoming transfer</span><span>+640</span><span>2 min</span></li>
-            <li><span>Withdrawal</span><span>-120</span><span>12 min</span></li>
-            <li><span>Daily gain</span><span>+310</span><span>1 hr</span></li>
-          </ul>
+        <section id="activity" class="panel hidden fade">
+          <ul class="activity" id="activityList"></ul>
         </section>
 
-        <section id="profile" class="panel hidden">
+        <section id="profile" class="panel hidden fade">
           <p>Status: Active</p>
-          <p>Session: Online</p>
+          <p>Access level: Private</p>
         </section>
 
         <p class="footnote">Developed by the Monezo EMC Co., Ltd.</p>
