@@ -1,9 +1,12 @@
 /* Navigation */
 function show(id) {
   document.querySelectorAll('.panel').forEach(p => p.classList.add('hidden'));
-  document.getElementById(id).classList.remove('hidden');
+  const panel = document.getElementById(id);
+  panel.classList.remove('hidden');
 
-  document.querySelectorAll('.sidebar button').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.sidebar button')
+    .forEach(b => b.classList.remove('active'));
+
   event.target.classList.add('active');
 }
 
@@ -13,10 +16,8 @@ function toggleTheme() {
   html.dataset.theme = html.dataset.theme === "dark" ? "light" : "dark";
 }
 
-/* Fake biometric unlock */
-setTimeout(() => {
-  unlock();
-}, 1800);
+/* Fake Face ID session */
+let faceIdTimer = null;
 
 function unlock() {
   document.getElementById("lock").classList.add("hidden");
@@ -26,9 +27,25 @@ function unlock() {
 function lock() {
   document.getElementById("lock").classList.remove("hidden");
   document.getElementById("app").classList.add("hidden");
+  startFaceIdScan();
 }
 
-/* Fake transfer */
+function startFaceIdScan() {
+  clearTimeout(faceIdTimer);
+  faceIdTimer = setTimeout(() => {
+    unlock();
+  }, 2200);
+}
+
+/* Init */
+startFaceIdScan();
+
+/* Fake transfer confirmation */
 function confirmTransfer() {
-  alert("Transfer completed successfully.\nReference: PRV-" + Math.floor(Math.random()*900000));
+  const ref = "PRV-" + Math.floor(100000 + Math.random() * 900000);
+  alert(
+    "Transfer completed successfully.\n" +
+    "Reference: " + ref + "\n" +
+    "Status: Settled"
+  );
 }
