@@ -1,85 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>NenoBL – Internal System</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NENO ONL BBL.</title>
+<link rel="icon" href="assets/img/N.png" type="image/png" />
+<style>
+/* =========================
+   Design Philosophy
+   - Silent UX
+   - Apple internal tooling
+   - No login, no CTA
+   - Read-only financial snapshot
+   ========================= */
 
-<link rel="icon" href="assets/img/N.png" type="image/png">
+:root{
+  --bg:#0b0c0f;
+  --panel:#14151a;
+  --panel-soft:#1a1b21;
+  --border:rgba(255,255,255,.06);
+  --text:#f5f6f7;
+  --muted:rgba(255,255,255,.45);
+  --accent:#9aa3ff;
+  --radius:20px;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
 
-<link rel="stylesheet" href="assets/css/base.css">
-<link rel="stylesheet" href="assets/css/layout.css">
-<link rel="stylesheet" href="assets/css/theme.css">
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",system-ui,sans-serif;
+  background:radial-gradient(1200px 600px at 20% -10%,#15162a,transparent),var(--bg);
+  color:var(--text);
+  letter-spacing:.2px;
+}
+
+/* ===== Desktop Shell ===== */
+.desktop{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.shell{
+  width:1200px;
+  height:760px;
+  background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,0));
+  border:1px solid var(--border);
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 60px 160px rgba(0,0,0,.65), inset 0 1px 0 rgba(255,255,255,.04);
+  backdrop-filter:blur(24px);
+  animation:boot .8s var(--ease) both;
+}
+
+@keyframes boot{
+  from{opacity:0; transform:translateY(12px) scale(.98)}
+  to{opacity:1; transform:none}
+}
+
+/* ===== Topbar ===== */
+.topbar{
+  height:56px;
+  display:flex;
+  align-items:center;
+  padding:0 18px;
+  background:rgba(20,21,26,.9);
+  border-bottom:1px solid var(--border);
+}
+
+.controls{display:flex; gap:8px}
+.dot{width:12px;height:12px;border-radius:50%}
+.r{background:#ff5f56}
+.y{background:#ffbd2e}
+.g{background:#27c93f}
+
+.title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-left:16px;
+  font-weight:600;
+  flex:1;
+}
+.title img{width:18px;height:18px;opacity:.9}
+
+.status{font-size:13px;color:var(--muted)}
+
+/* ===== App Layout ===== */
+.app{display:flex;height:calc(100% - 56px)}
+
+.sidebar{
+  width:240px;
+  padding:20px 14px;
+  background:rgba(18,19,24,.85);
+  border-right:1px solid var(--border);
+}
+
+.nav-item{
+  padding:12px 14px;
+  border-radius:14px;
+  font-size:14px;
+  color:var(--muted);
+  margin-bottom:6px;
+}
+.nav-item.active{
+  background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02));
+  color:var(--text);
+}
+
+.view{
+  flex:1;
+  padding:40px 48px;
+  overflow:hidden;
+}
+
+/* ===== Cards ===== */
+.card{
+  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:28px;
+  box-shadow:0 30px 80px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+.balance{
+  font-size:48px;
+  font-weight:600;
+  margin-top:6px;
+}
+
+.label{font-size:13px;color:var(--muted)}
+
+.fx{
+  margin-top:28px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+.fx-row{
+  display:flex;
+  justify-content:space-between;
+  font-size:15px;
+}
+
+.footer{
+  margin-top:36px;
+  font-size:12px;
+  color:rgba(255,255,255,.3);
+}
+</style>
 </head>
-
 <body>
 
 <div class="desktop">
-  <div class="app-shell">
+  <div class="shell">
 
-    <!-- Top Bar -->
-    <header class="topbar">
-      <div class="window-controls">
-        <span class="dot red"></span>
-        <span class="dot yellow"></span>
-        <span class="dot green"></span>
+    <div class="topbar">
+      <div class="controls">
+        <span class="dot r"></span>
+        <span class="dot y"></span>
+        <span class="dot g"></span>
       </div>
-
       <div class="title">
-        <img src="assets/img/N.png" alt="logo">
-        Internal Financial Console
+        <img src="assets/img/N.png" alt="logo" />
+        NENO ONL Bank.
       </div>
+      <div class="status">Account</div>
+    </div>
 
-      <div class="status">
-        Secure · Active
-      </div>
-    </header>
-
-    <!-- App -->
     <div class="app">
-
-      <!-- Sidebar -->
       <aside class="sidebar">
-        <button class="active">Overview</button>
-        <button disabled>Activity</button>
-        <button disabled>Assets</button>
+        <div class="nav-item active">Overview</div>
+        <div class="nav-item">Activity</div>
+        <div class="nav-item">Assets</div>
       </aside>
 
-      <!-- Main View -->
       <main class="view">
+        <section class="card">
+          <div class="label">Total Balance</div>
+          <div class="balance">$4,982.32</div>
+          <div class="label">USD</div>
 
-        <!-- Balance Card -->
-        <section class="card balance-card">
-          <span class="label">Total Balance</span>
-          <div class="amount">$4,982.32</div>
-          <span class="currency">USD</span>
-        </section>
-
-        <!-- FX Card -->
-        <section class="card fx-card">
-          <div class="fx-row">
-            <span>USD</span><span>$4,982.32</span>
-          </div>
-          <div class="fx-row">
-            <span>THB</span><span>฿179,640</span>
-          </div>
-          <div class="fx-row">
-            <span>EUR</span><span>€4,580</span>
-          </div>
-          <div class="fx-row">
-            <span>JPY</span><span>¥733,000</span>
+          <div class="fx">
+            <div class="fx-row"><span>USD</span><span>$4,982.32</span></div>
+            <div class="fx-row"><span>THB</span><span>฿179,640</span></div>
+            <div class="fx-row"><span>EUR</span><span>€4,580</span></div>
+            <div class="fx-row"><span>JPY</span><span>¥733,000</span></div>
           </div>
         </section>
 
-        <footer class="footnote">
-          Internal use only · System snapshot
-        </footer>
-
+        <div class="footer">Developed by the Monezo EMC Co., Ltd. Dev Team.</div>
       </main>
     </div>
+
   </div>
 </div>
 
-<script src="assets/js/app.js"></script>
 </body>
 </html>
