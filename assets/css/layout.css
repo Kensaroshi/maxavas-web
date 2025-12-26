@@ -1,49 +1,55 @@
 .center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .login-card {
-    width: 340px;
-    padding: 32px;
-    background: #020617;
-    border: 1px solid #1f2933;
-    border-radius: 10px;
-    text-align: left;
+  width: 340px;
+  padding: 32px;
+  border: 1px solid #1f2933;
+  border-radius: 10px;
+  background: #020617;
 }
 
 .login-card h2 {
-    margin-bottom: 20px;
-    font-size: 18px;
-    font-weight: 500;
+  margin: 0 0 18px;
+  font-weight: 500;
 }
 
 .login-card input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 14px;
-    background: #020617;
-    border: 1px solid #1f2933;
-    color: #e5e7eb;
-}
-
-.login-card button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    border: none;
-    cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  background: #020617;
+  border: 1px solid #1f2933;
+  color: #e5e7eb;
 }
 
 .top-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 18px 28px;
-    border-bottom: 1px solid #1f2933;
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 28px;
+  border-bottom: 1px solid #1f2933;
 }
 
 .content {
-    padding: 40px;
+  padding: 40px;
+  max-width: 720px;
+}
+
+.big-number {
+  font-size: 32px;
+  margin: 12px 0 28px;
+}
+
+.list {
+  padding-left: 18px;
+}
+
+.note {
+  margin-top: 32px;
+  font-size: 12px;
+  opacity: 0.5;
 }
