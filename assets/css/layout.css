@@ -1,82 +1,93 @@
-.center{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.viewport {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.wrap{
-  max-width:860px;
-  padding:32px;
-  margin:0 auto;
-}
-
-.top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:18px 28px;
-  border-bottom:1px solid var(--border);
-}
-
-.brand{ font-weight:500; }
-
-.card{
-  width:360px;
-  padding:28px;
-}
-
-.panel{
-  padding:24px;
-  margin-bottom:18px;
-}
-
-.soft{
+.auth-card {
+  width: 360px;
+  padding: 28px;
+  border-radius: 16px;
   background: var(--surface);
-  border-radius:14px;
-  border:1px solid var(--border);
-  box-shadow:
-    0 1px 0 rgba(255,255,255,.04) inset,
-    0 -1px 0 rgba(0,0,0,.6) inset;
+  border: 1px solid var(--border);
 }
 
-h1,h2,h3{ margin:0 0 8px; font-weight:500; }
-
-.muted{ color:var(--muted); font-size:13px; }
-
-input{
-  width:100%;
-  padding:11px 12px;
-  margin:12px 0;
-  background:#0b0b0c;
-  color:var(--text);
-  border-radius:10px;
-  border:1px solid var(--border);
+.auth-header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
 }
 
-.amount{
-  font-size:34px;
-  font-weight:600;
-  margin:6px 0 2px;
+.auth-header p {
+  margin: 4px 0 20px;
+  font-size: 13px;
+  color: var(--muted);
 }
 
-.list{
-  list-style:none;
-  padding:0;
-  margin:8px 0 0;
+input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
 }
 
-.list li{
-  display:flex;
-  justify-content:space-between;
-  padding:10px 0;
-  border-bottom:1px solid var(--border);
+.topbar {
+  height: 52px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 28px;
+  border-bottom: 1px solid var(--border);
 }
 
-.list li:last-child{ border-bottom:none; }
+.container {
+  max-width: 720px;
+  padding: 32px;
+  margin: auto;
+}
 
-.footnote{
-  margin-top:22px;
-  font-size:12px;
-  color:var(--muted);
+.card {
+  padding: 22px;
+  margin-bottom: 18px;
+  border-radius: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.balance {
+  margin-top: 6px;
+  font-size: 34px;
+  font-weight: 600;
+}
+
+.activity {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+.activity li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.activity li:last-child {
+  border-bottom: none;
+}
+
+.disclaimer {
+  margin-top: 28px;
+  font-size: 11px;
+  color: var(--muted);
 }
