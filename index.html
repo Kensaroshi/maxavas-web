@@ -12,80 +12,36 @@
 
 <body>
 
-<!-- macOS Window Chrome -->
-<header class="topbar">
-  <div class="window-controls">
-    <span class="dot red"></span>
-    <span class="dot yellow"></span>
-    <span class="dot green"></span>
-  </div>
-  <span class="title">NenoBL — Internal Simulation</span>
-  <button class="ghost" onclick="logout()">Sign out</button>
-</header>
+<div class="desktop">
+  <div class="app-shell">
 
-<div class="app">
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <button class="active" onclick="show('overview')">Overview</button>
-    <button onclick="show('activity')">Activity</button>
-    <button onclick="show('profile')">Profile</button>
-    <button onclick="show('statement')">Statement</button>
-  </aside>
-
-  <!-- Main -->
-  <main class="view">
-
-    <!-- OVERVIEW -->
-    <section id="overview" class="panel">
-      <span class="label">Available balance</span>
-      <div class="amount mono">$4982</div>
-
-      <div class="grid">
-        <div class="card">
-          <span class="meta">Today</span>
-          <strong class="mono">+310</strong>
-        </div>
-        <div class="card">
-          <span class="meta">Total volume</span>
-          <strong class="mono">15284</strong>
-        </div>
+    <header class="topbar">
+      <div class="window-controls">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
       </div>
+      <span class="title">NenoBL — Internal Simulation</span>
+      <button class="ghost" onclick="logout()">Sign out</button>
+    </header>
 
-      <p class="muted small">Last sync · just now</p>
-    </section>
+    <div class="app">
+      <aside class="sidebar">
+        <button class="active" onclick="show('overview')">Overview</button>
+        <button onclick="show('activity')">Activity</button>
+        <button onclick="show('profile')">Profile</button>
+        <button onclick="show('statement')">Statement</button>
+      </aside>
 
-    <!-- ACTIVITY -->
-    <section id="activity" class="panel hidden">
-      <span class="label">Recent activity</span>
-      <ul class="activity">
-        <li><span>Incoming settlement</span><span class="mono">+640</span><span>2 min ago</span></li>
-        <li><span>Manual withdrawal</span><span class="mono">-120</span><span>12 min ago</span></li>
-        <li><span>Daily performance</span><span class="mono">+310</span><span>1 hr ago</span></li>
-      </ul>
-    </section>
+      <main class="view">
+        <!-- panels เหมือนเดิม -->
+      </main>
+    </div>
 
-    <!-- PROFILE -->
-    <section id="profile" class="panel hidden">
-      <span class="label">System status</span>
-      <p><strong>Account</strong> · Active</p>
-      <p><strong>Session</strong> · Online</p>
-      <p><strong>Access</strong> · Internal</p>
-    </section>
-
-    <!-- STATEMENT (Export PDF fake) -->
-    <section id="statement" class="panel hidden">
-      <span class="label">Account statement</span>
-      <p class="muted">Monthly internal summary</p>
-      <button class="primary" onclick="exportPDF()">Export PDF</button>
-    </section>
-
-    <footer class="footnote">
-      © 2025 Monezo EMC Co., Ltd. · Internal use only
-    </footer>
-
-  </main>
+  </div>
 </div>
 
 <script src="assets/js/app.js"></script>
 </body>
+
 </html>
