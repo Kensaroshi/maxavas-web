@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Simulation Console</title>
+<title>NenoBL</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="assets/css/base.css">
 <link rel="stylesheet" href="assets/css/layout.css">
@@ -11,27 +11,39 @@
 <body>
 
 <header class="topbar">
-  <span class="title">Simulation Console</span>
-  <button class="btn-ghost" onclick="logout()">Log out</button>
+  <span>Simulation Console</span>
+  <button class="ghost" onclick="logout()">Log out</button>
 </header>
 
-<main class="container">
-  <section class="card">
-    <span class="label">Current balance</span>
-    <div class="balance amount">$4982</div>
-  </section>
+<div class="app">
+  <aside class="sidebar">
+    <button onclick="show('overview')">Overview</button>
+    <button onclick="show('activity')">Activity</button>
+    <button onclick="show('profile')">Profile</button>
+  </aside>
 
-  <section class="card">
-    <span class="label">Recent activity</span>
-    <ul class="activity">
-      <li><span>Ledger sync</span><span>+640</span></li>
-      <li><span>Adjustment</span><span>-120</span></li>
-      <li><span>Settlement</span><span>+310</span></li>
-    </ul>
-  </section>
+  <main class="view">
+    <section id="overview" class="panel">
+      <span class="label">Current balance</span>
+      <div class="amount">$4982</div>
+    </section>
 
-  <p class="disclaimer">Private UI simulation · No real funds involved</p>
-</main>
+    <section id="activity" class="panel hidden">
+      <ul class="activity">
+        <li><span>Recent incoming transaction</span><span>+640</span><span>2 min ago</span></li>
+        <li><span>Latest transaction: Withdrawal</span><span>-120</span><span>12 min ago</span></li>
+        <li><span>Daily Gain</span><span>+310</span><span>1 hr ago</span></li>
+      </ul>
+    </section>
+
+    <section id="profile" class="panel hidden">
+      <p>Status: Active</p>
+      <p>Session: Online</p>
+    </section>
+
+    <p class="footnote">Developed by the Monezo EMC Co., Ltd. Dev Team.</p>
+  </main>
+</div>
 
 <script src="assets/js/app.js"></script>
 </body>
