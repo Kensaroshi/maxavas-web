@@ -3,15 +3,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
-  background: #e5e7eb;
 }
 
 .app-shell {
   width: 1180px;
   height: 760px;
-  display: flex;
-  flex-direction: column;
   background: #f9fafb;
   border-radius: 22px;
   overflow: hidden;
@@ -44,21 +40,29 @@
 .green { background:#27c93f }
 
 .title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin-left: 16px;
   font-weight: 600;
   flex: 1;
 }
 
+.app-logo {
+  width: 22px;
+  height: 22px;
+}
+
 .app {
   display: flex;
-  flex: 1;
+  height: calc(100% - 52px);
 }
 
 .sidebar {
   width: 220px;
   padding: 16px;
-  border-right: 1px solid #e5e7eb;
   background: #fafafa;
+  border-right: 1px solid #e5e7eb;
 }
 
 .sidebar button {
@@ -80,5 +84,4 @@
 .view {
   flex: 1;
   padding: 32px;
-  overflow-y: auto;
 }
