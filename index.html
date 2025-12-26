@@ -13,12 +13,34 @@
 
 <body>
 
-<!-- LOCK / BIOMETRIC -->
+<!-- FACE ID LOCK SCREEN -->
 <div class="lock-screen" id="lock">
   <div class="lock-card glass">
-    <img src="assets/img/N.png" class="lock-logo">
-    <div class="bio-ring"></div>
-    <p class="lock-text">Touch ID to unlock</p>
+    <img src="assets/img/N.png" class="lock-logo" alt="Logo">
+
+    <div class="faceid">
+      <svg viewBox="0 0 200 200" class="face-mesh">
+        <!-- static mesh points -->
+        <g class="mesh-points">
+          <circle cx="100" cy="40" r="3"/>
+          <circle cx="70" cy="55" r="2.5"/>
+          <circle cx="130" cy="55" r="2.5"/>
+          <circle cx="55" cy="85" r="2"/>
+          <circle cx="145" cy="85" r="2"/>
+          <circle cx="100" cy="95" r="3"/>
+          <circle cx="80" cy="120" r="2"/>
+          <circle cx="120" cy="120" r="2"/>
+          <circle cx="100" cy="150" r="3"/>
+        </g>
+
+        <!-- scanning frame -->
+        <rect x="30" y="30" width="140" height="140" rx="18" class="scan-frame"/>
+        <line x1="30" y1="40" x2="170" y2="40" class="scan-line"/>
+      </svg>
+    </div>
+
+    <p class="lock-text">Scanning Face ID…</p>
+    <p class="lock-sub">Secure private session</p>
   </div>
 </div>
 
@@ -34,11 +56,11 @@
       </div>
 
       <div class="title">
-        <img src="assets/img/N.png" class="app-logo">
-        Private Banking
+        <img src="assets/img/N.png" class="app-logo" alt="Logo">
+        NENO ONL Banking.
       </div>
 
-      <button class="ghost" onclick="toggleTheme()">◐</button>
+      <button class="ghost" onclick="toggleTheme()" aria-label="Toggle theme">◐</button>
     </header>
 
     <div class="app">
@@ -50,15 +72,12 @@
       </aside>
 
       <main class="view">
-
-        <!-- OVERVIEW -->
         <section id="overview" class="panel fade">
           <span class="label">Total Assets</span>
           <div class="amount">$4,982.32</div>
-          <span class="sub">Primary USD Account</span>
+          <span class="sub">Primary USD Account · Private Tier</span>
         </section>
 
-        <!-- RATES -->
         <section id="rates" class="panel hidden fade">
           <div class="rates">
             <div><span>USD</span><strong>$4,982.32</strong></div>
@@ -68,14 +87,13 @@
           </div>
         </section>
 
-        <!-- TRANSFER -->
         <section id="transfer" class="panel hidden fade">
           <span class="label">Internal Transfer</span>
 
           <div class="transfer-card glass">
             <div class="field">
               <label>Recipient</label>
-              <input placeholder="Private account" disabled>
+              <input value="Private Internal Account" disabled>
             </div>
 
             <div class="field">
@@ -89,7 +107,7 @@
           </div>
         </section>
 
-        <p class="footnote">Confidential · Secure Private Session</p>
+        <p class="footnote">Developed by the Monezo EMC Co., Ltd. Dev Team.</p>
       </main>
     </div>
   </div>
