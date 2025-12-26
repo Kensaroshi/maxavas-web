@@ -1,26 +1,10 @@
 * {
   box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
   background: #e5e7eb;
   color: #111;
-}
-
-.mono {
-  font-family: "SF Mono", ui-monospace, monospace;
-}
-
-.hidden {
-  display: none;
-}
-
-.muted {
-  color: #6b7280;
-}
-
-.small {
-  font-size: 12px;
 }
